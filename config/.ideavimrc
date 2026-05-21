@@ -1,0 +1,60 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+map <leader>ff <Action>(GotoFile)
+map <leader>fc <Action>(GotoClass)
+map <leader>fc <Action>(GotoClass)
+map <leader><space> <Action>(GotoClass)
+
+map <leader>bd <Action>(CloseContent)
+map <leader>bb <Action>(Switcher)
+
+map <leader>sg <Action>(FindInPath)
+
+" LSP / Código
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>cr <Action>(RenameElement)
+map <leader>cf <Action>(ReformatCode)
+
+ma bjgr <Action>(FindUsages)
+map gd <Action>(GotoDeclaration)
+map gD <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+
+" Panel izquierdo (Project tree)
+map <leader>e <Action>(alt + F1)
+map <leader>n <Action>(ActivateProjectToolWindow<CR>)
+
+map <S-h> <Action>(PreviousTab)
+map <S-l> <Action>(NextTab)
