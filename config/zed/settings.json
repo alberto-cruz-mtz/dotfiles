@@ -1,0 +1,47 @@
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": "<api-key>"
+      }
+    }
+  },
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "auto_update": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Kanagawa Dragon"
+  },
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true
+}

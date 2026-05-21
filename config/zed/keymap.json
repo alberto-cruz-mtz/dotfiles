@@ -1,0 +1,33 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {}
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {}
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f r": "file_finder::Toggle",
+      "space space": "file_finder::Toggle",
+      "space b d": "pane::CloseActiveItem",
+      "space b b": "tab_switcher::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space c f": "editor::Format",
+      "g r": "editor::FindAllReferences",
+      "g d": "editor::GoToDefinition",
+      "g D": "editor::GoToDeclaration",
+      "g i": "editor::GoToImplementation",
+      "space e": "workspace::ToggleLeftDock",
+      "space a p": "workspace::ToggleRightDock",
+      "space n": "project_panel::ToggleFocus",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem"
+    }
+  }
+]
