@@ -7,4 +7,4 @@ configuration {
    //icon-theme: "Papirus";
 }
 
-@theme "/theme/rounded-blue-dark.rasi"
+@theme "/themes/rounded-blue-dark.rasi"
