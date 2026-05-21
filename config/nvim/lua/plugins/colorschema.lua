@@ -1,53 +1,34 @@
 return {
   {
-    "Alan-TheGentleman/oldworld.nvim",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
-  },
-  {
-    "Gentleman-Programming/gentleman-kanagawa-blur",
-    name = "gentleman-kanagawa-blur",
-    priority = 1000,
     opts = {
-      terminal_colors = true, -- habilitar colores para la terminal
-      variant = "sakura_night_blur", -- puede usar: sakura_night_blur, blur
-      styles = { -- Puedes definir el estilo utilizando el formato: estilo = valor
-        comments = { italic = true }, -- estilo para comentarios
-        keywords = { italic = true }, -- estilo para palabras clave
-        identifiers = { italic = true }, -- estilo para identificadores
-        functions = { italic = true }, -- estilo para funciones
-        variables = { italic = true }, -- estilo para variables
-        booleans = { italic = true }, -- estilo para valores booleanos
+      compile = false, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = true },
+      functionStyle = {},
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      transparent = true, -- do not set background color
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = { -- add/modify theme and palette colors
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
       },
-      integrations = { -- Puedes habilitar/deshabilitar integraciones
-        alpha = true,
-        cmp = true,
-        flash = true,
-        gitsigns = true,
-        hop = false,
-        indent_blankline = true,
-        lazy = true,
-        lsp = true,
-        markdown = true,
-        mason = true,
-        navic = false,
-        neo_tree = false,
-        neogit = false,
-        neorg = false,
-        noice = true,
-        notify = true,
-        rainbow_delimiters = true,
-        telescope = true,
-        treesitter = true,
+      theme = "wave", -- Load "wave" theme
+      background = { -- map the value of 'background' option to a theme
+        dark = "wave", -- try "dragon" !
+        light = "lotus",
       },
-      highlight_overrides = {},
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gentleman-kanagawa-blur",
+      colorscheme = "kanagawa",
     },
   },
 }
