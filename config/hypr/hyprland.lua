@@ -267,6 +267,11 @@ hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
+-- Keybinds for screenshots using hyprshot (
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m output"))
+
 -- binds for screenshotting
 hl.bind("Print", hl.dsp.exec_cmd(screenshot .. " fullscreen"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(screenshot .. " region"))
