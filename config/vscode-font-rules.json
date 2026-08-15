@@ -1,0 +1,38 @@
+// configuración para que ciertas palabras clave en VSCode se vean en cursiva, mientras que otras no.
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword", // import, export, return...
+          "keyword.control", // await, async, if, else, switch...
+          "keyword.control.flow", // operadores como =, +, -, >, <
+          "storage.type", // const, let, var, function...
+          "storage.modifier", // static, private, public...
+          "variable.language.this", // la palabra "this"
+          "variable.language.super", // la palabra "super"
+          "keyword.control.trycatch", // try-catch
+          "keyword.operator.new", // la palabra "new"
+          "entity.name.type", // nombre de una clase/interface/enum/type como un tipo de dato
+          "support.type.primitive" // tipos de datos primitivos como string, number, boolean...
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          // Exclusiones para que cosas que NO deben ser cursivas se queden planas
+          "invalid",
+          "keyword.operator", // operadores como =, +, -, >, <
+          "constant.numeric", // números
+          "string" // textos entre comillas
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
+}
