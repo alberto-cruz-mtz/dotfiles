@@ -1,0 +1,146 @@
+// -*- mode: jsonc -*-
+{
+  "reload_style_on_change": true,
+  "height": 25, // Waybar height (to be removed for auto height)
+  "spacing": 0, // Gaps between modules (4px)
+  "modules-left": ["custom/omarchy", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["group/status", "group/options", "group/pc"],
+  "custom/omarchy": {
+    "format": "<span></span>",
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "0",
+      "active": "󱓻",
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6],
+    },
+  },
+  "group/status": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "temperature"],
+  },
+  "group/options": {
+    "orientation": "horizontal",
+    "modules": ["network", "pulseaudio", "bluetooth", "custom/notification"],
+  },
+  "group/pc": {
+    "orientation": "horizontal",
+    "modules": ["battery", "custom/power"],
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "format": "{:L%A %H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip": false,
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛 {usage}%",
+  },
+  "memory": {
+    "format": " {percentage}%",
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""],
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+    "tooltip-format-ethernet": "Connected",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", " "],
+    },
+  },
+  "bluetooth": {
+    "format": "{icon}",
+    "format-connected": "{icon} {device_alias}",
+    "on-click": "rfkill toggle bluetooth",
+    "on-click-right": "blueman-manager",
+    "format-icons": {
+      "enabled": "󰂯",
+      "disabled": "󰂲",
+      "connected": "󰂱",
+      "disabled-connected": "󰂱",
+    },
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\n{device_alias}",
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": "{icon} {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-full": "{icon} {capacity}%",
+    "format-icons": {
+      "full": "󰁹",
+      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "plugged": "",
+    },
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "on-click": "wlogout",
+  },
+}
